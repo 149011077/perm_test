@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <label>用户名：</label> <input type="text" name="username" />
+    <label>密码：</label> <input type="password" name="password" />
+    <input type="submit" value="登陆" />
+    <div>
+       <button type="button" onclick="logclick()">登陆状态</button>
+    </div>
+</form>
+<script type="text/javascript">
+    function logclick() { alert("click"); }
+</script>
+</body>
+</html>

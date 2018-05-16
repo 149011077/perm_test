@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+{% include 'user.html' %}
+<div>
+    <label>这是用户页</label>
+</div>
+    <a class="btn btn-primary" id="addBtn"  href="/manager/add_user/">添加</a>
+    <a class="btn btn-primary" id="cancel"  href="/get_classes.html">跳转</a>
+    <a class="btn btn-primary" id="cancel"  href="/index/">跳转到首页</a>
+    <ul>
+        {% for row in user_list %}
+            <li>{{ row.id }}-{{ row.username }}-{{ row.email }} <a class="btn btn-warning" href="/manager/edit_user/{{ row.id }}/">编辑</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
